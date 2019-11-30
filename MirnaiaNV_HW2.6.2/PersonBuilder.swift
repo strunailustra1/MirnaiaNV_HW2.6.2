@@ -14,10 +14,10 @@ class PersonBuilder {
     
     static let surnameList = ["Smith", "Jonson", "Lopez", "Grande", "Martin"]
     
-    static let emailList = ["Smith@gmail.com",
-                           "KennyLopez@gmail.com",
-                           "Martin1989@gmail.com",
-                           "Kevin905@gmail.com",
+    static let emailList = ["last_chance@gmail.com",
+                           "stangerinthedark_1998@gmail.com",
+                           "MartinFrimen1989@gmail.com",
+                           "lonelyDreams905@gmail.com",
                            "murder2019@gmail.com"]
     
     static let phoneList = ["89265783478",

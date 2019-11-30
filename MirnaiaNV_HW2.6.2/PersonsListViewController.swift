@@ -15,9 +15,9 @@ class PersonsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 0..<PersonBuilder.nameList.count {
-            personsList.append(PersonBuilder.getPerson())
-        }
+        tableView.rowHeight = 36
+        
+        fillPersonsList()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,5 +39,11 @@ class PersonsListViewController: UITableViewController {
         cell.textLabel?.text = indexPath.row == 0 ? person.email : person.phone
         
         return cell
+    }
+    
+    private func fillPersonsList() {
+        for _ in 0..<PersonBuilder.nameList.count {
+            personsList.append(PersonBuilder.getPerson())
+        }
     }
 }
