@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PersonBulder {
+class PersonBuilder {
     
     static let nameList = ["John", "James", "Kenny", "Kevin", "Mike"]
     

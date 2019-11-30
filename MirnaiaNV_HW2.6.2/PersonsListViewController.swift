@@ -11,16 +11,32 @@ import UIKit
 class PersonsListViewController: UITableViewController {
     
     var personsList: [Person] = []
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        for _ in 0..<PersonBuilder.nameList.count {
+            personsList.append(PersonBuilder.getPerson())
+        }
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        personsList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        personsList[section].initials
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PersonBulder.nameList.count
+        2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        let person = PersonBulder.getPerson()
-        personsList.append(person)
-        cell.textLabel?.text = person.initials
+        let person = personsList[indexPath.section]
+        
+        cell.textLabel?.text = indexPath.row == 0 ? person.email : person.phone
         
         return cell
     }
