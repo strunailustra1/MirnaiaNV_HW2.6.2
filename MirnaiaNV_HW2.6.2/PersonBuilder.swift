@@ -15,7 +15,7 @@ class PersonBuilder {
     static let surnameList = ["Smith", "Jonson", "Lopez", "Grande", "Martin"]
     
     static let emailList = ["last_chance@gmail.com",
-                           "stangerinthedark_1998@gmail.com",
+                           "stangerinthedark@gmail.com",
                            "MartinFrimen1989@gmail.com",
                            "lonelyDreams905@gmail.com",
                            "murder2019@gmail.com"]

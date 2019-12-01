@@ -28,6 +28,12 @@ class PersonsListViewController: UITableViewController {
         personsList[section].initials
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .darkGray
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
     }
@@ -36,9 +42,14 @@ class PersonsListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         let person = personsList[indexPath.section]
         
-        cell.textLabel?.text = indexPath.row == 0 ? person.email : person.phone
+        cell.textLabel?.text = indexPath.row == 0 ? "email:" : "phone:"
+        cell.detailTextLabel?.text = indexPath.row == 0 ? person.email : person.phone
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .lightGray
     }
     
     private func fillPersonsList() {
